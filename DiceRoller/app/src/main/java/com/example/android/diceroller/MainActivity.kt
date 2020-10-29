@@ -10,11 +10,18 @@ private const val ROLL_BUTTON_TEXT = "Let's Roll"
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var diceImage: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setupImages()
         setupButtons()
+    }
+
+    private fun setupImages() {
+        diceImage = findViewById(R.id.dice_image)
     }
 
     private fun setupButtons() {
@@ -37,7 +44,6 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
 
-        val diceImage: ImageView = findViewById(R.id.dice_image)
         diceImage.setImageResource(drawableResource)
     }
 
